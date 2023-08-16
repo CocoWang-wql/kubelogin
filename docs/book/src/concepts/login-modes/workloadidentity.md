@@ -6,6 +6,8 @@ This login mode uses [Azure AD federated identity credentials](https://docs.micr
 * `AZURE_FEDERATED_TOKEN_FILE` is the file containing signed assertion of workload identity. E.g. Kubernetes projected service account (jwt) token
 * `AZURE_AUTHORITY_HOST` is the base URL of an Azure Active Directory authority. E.g. `https://login.microsoftonline.com/`
 
+For a pod to use workload identity login mode, it needs to be configured with [workload identity](https://azure.github.io/azure-workload-identity/docs/quick-start.html) at first.
+
 With workload identity, it's possible to access Kubernetes clusters from CI/CD system such as Github, ArgoCD, etc. without storing Service Principal credentials in those external systems. To learn more, [here](https://github.com/weinong/azure-federated-identity-samples) is a sample to setup OIDC federation from Github.
 
 In this login mode, token will not be cached on the filesystem.
